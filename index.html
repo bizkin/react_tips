@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="layout.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <div style="padding: 0.7rem">
+          <h2>Commonly used React Syntax</h2>
+          <h5 style="padding: 0.2rem">
+            Along with pure Mansory layout :p
+          </h5>
+        </div>
+        <article>
+          <section>
+            <h3 class="title">Let & Const</h3>
+            <p>
+              When used to declare variables, they are scoped to the
+              <strong>block and not the function;</strong> this means they are
+              only available within that block. Variables declared with let can
+              be re-assigned but cannot be redeclared within the same scope
+              whereas those declared by const must be assigned an initial value
+              but cannot be redeclared within the same scope.
+            </p>
+
+            <pre>
+let TVShow = "The Voice";
+TVShow = "Family Guy";
+
+console.log(TVShow); 
+
+//Family Guy
+            </pre>
+          </section>
+
+          <section>
+            <h3 class="title">The spread operator</h3>
+            <p>
+              The spread operator denoted by
+              <strong
+                style="background-color:rgb(224, 224, 224); padding: 0.3rem;"
+                >…</strong
+              >
+              is used to expand iterable objects into multiple elements
+            </p>
+
+            <pre>
+const Flavors = ['Bitter', 'Sweet', 'Salty'];
+
+console.log('...Flavors'); 
+
+// Bitter Sweet Salty >
+            </pre>
+
+            <p>
+              The spread operator can also be used to combine multiple arrays
+              into one array containing all array elements, at same order placed
+              as arguments
+            </p>
+
+            <pre>
+const Cold = ["Blue", "Ice", "Polski"]; 
+const Hot = ["Red", "Fire", "Morocco"]; 
+const WomenType = [...Cold, ...Hot];
+console.log(WomenType); 
+
+//["Blue", "Ice", "Polski", "Red","Fire", "Morocco"]
+            </pre>
+          </section>
+
+          <section>
+            <h3 class="title">Template Literal</h3>
+            <p>
+              string literals that include embedded expressions. They are
+              denoted by backticks.The template literals can contain
+              placeholders which are represented by ${expression}.
+            </p>
+
+            <pre>
+const student = {
+  name: "John Doe",
+  city: "Ambersand"
+};
+
+let message = `Hello ${student.name} from ${student.city}`;
+
+//Hello John Doe from Ambersand
+            </pre>
+          </section>
+
+          <section>
+            <h3 class="title">Arrow Functions</h3>
+            <p>
+              As opposed to regular expressions which can either be function
+              declarations or function expressions, arrow functions are always
+              expressions which can only be used where expressions are valid.
+              Arrow functions can be stored in a variable, passed as an argument
+              to a function or stored in an object’s property. The cool thing
+              about it, it can make code as short as 1 line.
+            </p>
+
+            <pre>
+const Student = (name, city) => console.log(`Hello ${name} from ${city}`);
+
+Student("Tboy", "Acapella");
+
+//Hello Tboy from Acapella
+            </pre>
+          </section>
+
+          <section>
+            <h3 class="title">Block Body Syntax</h3>
+            <p>
+              When there is need to have more than one line of code in the arrow
+              function body, the block body syntax has to be used. With the
+              block body syntax, curly braces have to be used to wrap the
+              function body and a return statement has to be used to actually
+              return something from the function as shown below.
+            </p>
+            <pre>
+const UpperCase = name => {
+  name = name.toUpperCase();
+  remove_space = name.split(" ").join("");
+  return `${remove_space.length} characters make up ${name}`;
+  };
+
+console.log(UpperCase("George Bush"));
+
+//10 characters make up GEORGE BUSH
+                </pre
+            >
+          </section>
+
+          <section>
+            <h3 class="title">Destructuring</h3>
+            <h4>Array</h4>
+            <p>
+              In ES6, data can be extracted from arrays and objects into
+              distinct variables using destructuring. The
+              <strong
+                style="background-color:rgb(224, 224, 224); padding: 0.1rem;"
+                >[ ]</strong
+              >
+              represent the array being destructured and x, y, z represent the
+              variables where the values from the array are to be stored. No
+              need to have to specify the array indexes because they are
+              automatically implied. During destructing some values can be
+              ignored.
+            </p>
+            <pre>
+const coords = [246.57, 143.24, 10.75];
+const [x, y, z] = coords;
+
+console.log(x, y, z);
+
+//246.57 10.75
+// 246.57, 143.24, 10.75
+            </pre>
+          </section>
+          <section>
+            <h3 class="title">Destructuring</h3>
+            <h4>Object</h4>
+            <p>
+              The
+              <strong
+                style="background-color:rgb(224, 224, 224); padding: 0.1rem;"
+                >{ }</strong
+              >
+              represent the object to be destructed and type, color, model
+              represent the variables where to store the properties from the
+              object. also can destruct single object.
+            </p>
+            <pre>
+const car = {
+  type: "Mitsubishi",
+  color: "Red",
+  model: "2013"
+};
+
+const { type, color, model } = car;
+
+console.log(type, color, model);
+            </pre>
+          </section>
+
+          <section>
+            <h3 class="title">Object Literal</h3>
+            <p>
+              ES6 provides a new way of initialising objects without code
+              repetition, making them concise and easy to read. Prior to ES6,
+              objects were initialised using the same property names as the
+              variable names assigned to them as shown below:
+            </p>
+            <pre>
+let type = 'Toyota';
+let color = 'Silver';
+let model = 2007;
+
+const car = {
+  type: type,
+  color: color,
+  model: model
+};
+
+console.log(car);
+//output
+{ type: 'Toyota', color: 'Silver', model: 2007 }
+            </pre>
+            <p>
+              Looking closely at the above example, it is clear that type:type,
+              color:color and model:model seem redundant. The good news is that
+              you can remove those duplicate variable names from object
+              properties if the properties have the same name as the variables
+              being assigned to them as shown below.
+            </p>
+
+            <pre>
+let type_ = "Kia";
+let color_ = "blue";
+let model_ = 2017;
+
+const car_ = {
+  type_,
+  color_,
+  model_
+};
+
+console.log(car_);
+//{ type: "Kia", color: "blue", model: 2017 }
+
+            </pre>
+          </section>
+        </article>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

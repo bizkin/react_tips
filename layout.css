@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* padding: 1em; */
+  line-height: 1.25;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+main {
+  width: 75%;
+  margin: 0 auto;
+}
+
+article {
+  column-width: 15em;
+  column-gap: 1em;
+}
+
+section {
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 1rem;
+  width: 100%;
+  background: #efefef;
+}
+
+p {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+pre {
+  text-align: left;
+  white-space: pre-wrap;
+  color: #636363;
+}
